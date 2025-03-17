@@ -20,3 +20,9 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
+- task: DotNetCoreCLI@2
+  displayName: 'Install Azure SignTool'
+  inputs:
+    command: custom
+    custom: tool
+    arguments: 'install --global AzureSignTool'
